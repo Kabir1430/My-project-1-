@@ -25,37 +25,45 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
+            anim.SetFloat("H",0);
 
-            // Player is moving
-            anim.SetBool("Walk", true);
-            Debug.Log("Player is moving!");
+            anim.SetFloat("V", 1);
         }
         else if(Input.GetKey(KeyCode.S))
         {
 
-            anim.SetBool("Walk", true);
 
+            anim.SetFloat("V", -1);
+
+
+            anim.SetFloat("H", 0);
 
         }
 
         else if (Input.GetKey(KeyCode.D))
         {
 
-            anim.SetBool("Walk", true);
+                        anim.SetFloat("H", 1);
 
+
+            anim.SetFloat("V", 0);
 
         }
         else if (Input.GetKey(KeyCode.A))
         {
 
-            anim.SetBool("Walk", true);
+            anim.SetFloat("H", -1);
+
+            anim.SetFloat("V", 0);
 
 
         }
 
         else
         {
-                anim.SetBool("Walk", false);
+            anim.SetFloat("H", 0);
+
+            anim.SetFloat("V", 0);
 
             // Player is not moving
             Debug.Log("Player is not moving.");
