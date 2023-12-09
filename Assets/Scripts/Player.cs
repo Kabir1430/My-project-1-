@@ -29,8 +29,16 @@ public class Player : MonoBehaviour
 
 
      Ground = Physics.CheckSphere(sphere.position, Radius,layer);
+        if(Ground&&Velocity.y<0)
+        {
+            Velocity.y = 0;
 
+        }
+        else
+        {
                  Velocity.y -= gravity * Time.deltaTime;
+        }
+
         
         characterController.Move(Velocity);
 

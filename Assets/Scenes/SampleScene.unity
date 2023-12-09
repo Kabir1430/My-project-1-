@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 165454761}
   - component: {fileID: 165454760}
   - component: {fileID: 165454759}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1682,7 +1682,7 @@ MonoBehaviour:
   characterController: {fileID: 1705779838}
   speed: 6
   anim: {fileID: 1980954141}
-  gravity: 9.81
+  gravity: 0.1
   Radius: 0.1
   Ground: 0
   sphere: {fileID: 218035245}
