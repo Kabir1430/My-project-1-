@@ -1683,7 +1683,7 @@ MonoBehaviour:
   speed: 6
   anim: {fileID: 1980954141}
   gravity: 9.81
-  Radius: 0.5
+  Radius: 0.1
   Ground: 0
   sphere: {fileID: 218035245}
   smoothblend: 0.1
