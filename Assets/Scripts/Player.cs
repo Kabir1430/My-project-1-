@@ -9,6 +9,17 @@ public class Player : MonoBehaviour
 
     public float speed;
     public Animator anim;
+
+
+    public float gravity;
+
+    public Vector3 velocity;
+
+    public LayerMask layer;
+
+    public bool Ground;
+
+    public float smoothblend;
     void Start()
     {
     }
@@ -25,45 +36,48 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            anim.SetFloat("H",0);
+            //   anim.SetFloat("H",0);
 
-            anim.SetFloat("V", 1);
+            // anim.SetFloat("V", 1);
+            anim.SetFloat("V", 1, smoothblend, Time.deltaTime);
         }
         else if(Input.GetKey(KeyCode.S))
         {
 
 
-            anim.SetFloat("V", -1);
+            //  anim.SetFloat("V", -1);
 
 
-            anim.SetFloat("H", 0);
+            //anim.SetFloat("H", 0);
+            anim.SetFloat("V", -1, smoothblend, Time.deltaTime);
 
         }
 
         else if (Input.GetKey(KeyCode.D))
         {
 
-                        anim.SetFloat("H", 1);
+            anim.SetFloat("H", 1, smoothblend, Time.deltaTime);
 
 
-            anim.SetFloat("V", 0);
+        //    anim.SetFloat("V", 0);
 
         }
         else if (Input.GetKey(KeyCode.A))
         {
 
-            anim.SetFloat("H", -1);
+            anim.SetFloat("H", -1, smoothblend, Time.deltaTime);
 
-            anim.SetFloat("V", 0);
+      //      anim.SetFloat("V", 0);
 
 
         }
 
         else
         {
-            anim.SetFloat("H", 0);
 
-            anim.SetFloat("V", 0);
+            anim.SetFloat("H", 0, smoothblend, Time.deltaTime);
+            anim.SetFloat("V", 0, smoothblend, Time.deltaTime);
+       //     anim.SetFloat("V", 0);
 
             // Player is not moving
             Debug.Log("Player is not moving.");
@@ -72,5 +86,9 @@ public class Player : MonoBehaviour
 
     }
 
-    
+
+   public void Move(float x,float y)
+    {
+        anim.SetFloat("V", y, smoothblend, Time.deltaTime);
+    }
 }
