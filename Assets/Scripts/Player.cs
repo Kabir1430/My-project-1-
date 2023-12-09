@@ -8,47 +8,57 @@ public class Player : MonoBehaviour
   public CharacterController characterController;
 
     public float speed;
+
     public Animator anim;
 
-
-    public float gravity;
-
-    public Vector3 velocity;
-
-    public LayerMask layer;
+    public float gravity = 9.81f; // Adjust gravity force as needed
+    
+    public float Radius;
 
     public bool Ground;
 
-    public float smoothblend;
-    void Start()
-    {
-    }
+    public Transform sphere;
 
+    public float smoothblend;
+
+    public Vector3 crouchscale,Velocity;
+   
+    public LayerMask layer;
     void Update()
     {
 
-     float H=Input.GetAxis("Horizontal")*speed *Time.deltaTime;
+
+     Ground = Physics.CheckSphere(sphere.position, Radius,layer);
+
+                 Velocity.y -= gravity * Time.deltaTime;
+        
+        characterController.Move(Velocity);
+
+     float H=Input.GetAxis("Horizontal")*speed *Time.deltaTime; 
 
         float V = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         characterController.Move(transform.forward * V);
-        characterController.Move(transform.right * H);    
+        characterController.Move(transform.right * H);   
+        
+
+
+        //Crouch
+        if(Input.GetKey(KeyCode.LeftControl))
+        {
+            transform.localScale = crouchscale;
+        }
+
+        
+        
         //Anim
 
         if (Input.GetKey(KeyCode.W))
         {
-            //   anim.SetFloat("H",0);
-
-            // anim.SetFloat("V", 1);
+       
             anim.SetFloat("V", 1, smoothblend, Time.deltaTime);
         }
         else if(Input.GetKey(KeyCode.S))
         {
-
-
-            //  anim.SetFloat("V", -1);
-
-
-            //anim.SetFloat("H", 0);
             anim.SetFloat("V", -1, smoothblend, Time.deltaTime);
 
         }
@@ -58,17 +68,11 @@ public class Player : MonoBehaviour
 
             anim.SetFloat("H", 1, smoothblend, Time.deltaTime);
 
-
-        //    anim.SetFloat("V", 0);
-
         }
         else if (Input.GetKey(KeyCode.A))
         {
 
             anim.SetFloat("H", -1, smoothblend, Time.deltaTime);
-
-      //      anim.SetFloat("V", 0);
-
 
         }
 
@@ -83,6 +87,9 @@ public class Player : MonoBehaviour
             Debug.Log("Player is not moving.");
     
         }
+
+        //Gravity
+
 
     }
 
