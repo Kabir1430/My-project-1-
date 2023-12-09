@@ -15,15 +15,29 @@ public class Player : MonoBehaviour
     
     public float Radius;
 
-    public bool Ground;
+    public bool Ground,iscrouch;
 
     public Transform sphere;
 
-    public float smoothblend;
+    public float smoothblend,wait;
 
-    public Vector3 crouchscale,Velocity;
+    public Vector3 crouchscale,defaultscale,Velocity;
    
     public LayerMask layer;
+
+    public GameObject CardBoard,PlayerObj;
+
+    IEnumerator Crouching()
+    {
+        yield return new WaitForSeconds(wait);
+        iscrouch = true;
+    }
+    IEnumerator Crouch()
+    {
+        yield return new WaitForSeconds(wait);
+
+        iscrouch = false;
+    }
     void Update()
     {
 
@@ -51,12 +65,21 @@ public class Player : MonoBehaviour
 
 
         //Crouch
-        if(Input.GetKey(KeyCode.LeftControl))
+        if(Input.GetKey(KeyCode.LeftControl)&&!iscrouch)
         {
             transform.localScale = crouchscale;
+        CardBoard.SetActive(true);
+            PlayerObj.SetActive(false);    
+            StartCoroutine(Crouching());
+       
         }
-
-        
+        if(Input.GetKey(KeyCode.LeftControl) && iscrouch)
+        {
+            transform.localScale = defaultscale;
+            CardBoard.SetActive(false);
+            PlayerObj.SetActive(true);    
+            StartCoroutine(Crouch());   
+        }
         
         //Anim
 
