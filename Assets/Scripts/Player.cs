@@ -68,8 +68,9 @@ public class Player : MonoBehaviour
         if(Input.GetKey(KeyCode.LeftControl)&&!iscrouch)
         {
             transform.localScale = crouchscale;
-        CardBoard.SetActive(true);
-            PlayerObj.SetActive(false);    
+        CardBoard.SetActive(true); 
+            PlayerObj.SetActive(false);
+            characterController.center = new Vector3(0, 0, 0.28f);
             StartCoroutine(Crouching());
        
         }
@@ -77,7 +78,8 @@ public class Player : MonoBehaviour
         {
             transform.localScale = defaultscale;
             CardBoard.SetActive(false);
-            PlayerObj.SetActive(true);    
+            PlayerObj.SetActive(true);
+            characterController.center = new Vector3(0, 0, 0);
             StartCoroutine(Crouch());   
         }
         
