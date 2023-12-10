@@ -23341,23 +23341,23 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Darling, if you read this, please help us!
 
-    
 
-    Monsters kidnapped
-    us and locked us in different rooms. If you find the 3 keys that the monsters
-    have hidden, we might have a chance to escape! You need a key for me, one for
-    our little Timo and one for the house basement door, which the monsters have
-    locked.
 
-    But be careful, the monsters will try to stop you! They could hide
-    anywhere, so don''t trust what you see!
+    Monsters kidnapped us
+    and locked us in different rooms. If you find the 3 keys that the monsters have
+    hidden, we might have a chance to escape! You need a key for me, one for our
+    little Timo and one for the house basement door, which the monsters have locked.
 
-    
+    But
+    be careful, the monsters will try to stop you! They could hide anywhere, so don''t
+    trust what you see!
 
-    You are our last hope, we
-    believe in you!
 
-    I love you,
+
+    You are our last hope, we believe in you!
+
+    I love
+    you,
 
     Your Olivia'
   m_isRightToLeft: 0
@@ -35852,7 +35852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -76105,7 +76105,7 @@ Transform:
   m_GameObject: {fileID: 8183333150748965725}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5901186, y: 4.039, z: -28.585646}
+  m_LocalPosition: {x: 1.6, y: 4.039, z: -42.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -76247,7 +76247,11 @@ MonoBehaviour:
   papering: 0
   lighting: 0
   opening: 0
+  isBeingCarried: 0
+  pickup: 0
   anim: {fileID: 96621817}
+  rb: {fileID: 0}
+  Object: {fileID: 0}
 --- !u!4 &1406765437185081959
 Transform:
   m_ObjectHideFlags: 0

@@ -40,7 +40,7 @@ public class CameraRotation : MonoBehaviour
 
         player.Rotate(player.up * x);
 
-        if(Input.GetKey(KeyCode.Mouse1) && !lighting)
+        if (Input.GetKey(KeyCode.Mouse1) && !lighting)
         {
             Flash.SetActive(true);
             StartCoroutine(On());
@@ -49,7 +49,7 @@ public class CameraRotation : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse1) && lighting)
         {
             Flash.SetActive(false);
-          
+
             StartCoroutine(OFF());
 
         }
@@ -58,8 +58,9 @@ public class CameraRotation : MonoBehaviour
         {
             Shoot();
         }
-    }
 
+       
+    }
     void Shoot()
     {
         RaycastHit hit;
@@ -100,7 +101,7 @@ public class CameraRotation : MonoBehaviour
 
             }
 
-            if(hit.collider.gameObject.layer== LayerMask.NameToLayer("Pickup") &&  pickup)
+            if(hit.collider.gameObject.layer== LayerMask.NameToLayer("Pickup") &&  !pickup)
             {
 
                 Object.PickUp();
@@ -172,7 +173,7 @@ public class CameraRotation : MonoBehaviour
     {
 
         yield return new WaitForSeconds(0.2f);
-        pickup = false;
+        pickup = true;
     }
 
     IEnumerator Close()
