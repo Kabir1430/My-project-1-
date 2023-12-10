@@ -76,7 +76,9 @@ public class Enemy : MonoBehaviour
         if (!m_CaughtPlayer)
         {
             Move(speedRun);
-            navMeshAgent.SetDestination(m_PlayerPosition);          //  set the destination of the enemy to the player location
+            navMeshAgent.SetDestination(m_PlayerPosition);
+            Debug.Log("Chasing");
+            //  set the destination of the enemy to the player location
         }
         if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)    //  Control if the enemy arrive to the player location
         {
