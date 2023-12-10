@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameOver : MonoBehaviour
 {
-
+    [SerializeField] public AudioSource gameOverSound;
 
     public GameObject panel;
     public void OnCollisionEnter(Collision collision)
@@ -14,6 +14,7 @@ public class GameOver : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             panel.SetActive(true);
+            gameOverSound.Play();
         }
     }
   
