@@ -194,11 +194,12 @@ public class Enemy : MonoBehaviour
             }
         }
     }
-    private void OnCollisionEnter(Collision collision)
+    
+    void OnCollisionEnter(Collision collision)
     {
+            Debug.Log("Touch");
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Touch");
 
         }
     }
