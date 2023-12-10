@@ -19,7 +19,7 @@ public class Pickup : MonoBehaviour
         transform.SetParent(parent); // Set the object's parent to the camera
         isBeingCarried = true; // Set the carrying flag to true
 
-        transform.position += new Vector3(0, 0, 0);
+       
 
 
     }

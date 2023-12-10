@@ -59,7 +59,7 @@ public class CameraRotation : MonoBehaviour
             Shoot();
         }
 
-       
+      
     }
     void Shoot()
     {
@@ -171,9 +171,9 @@ public class CameraRotation : MonoBehaviour
 
     IEnumerator Open()
     {
-
         yield return new WaitForSeconds(0.2f);
         pickup = true;
+        Object.Carry();
     }
 
     IEnumerator Close()
