@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraRotation : MonoBehaviour
 {
@@ -20,16 +21,16 @@ public class CameraRotation : MonoBehaviour
 
     public bool papering,lighting,opening, isBeingCarried,pickup,girlkey,chilkey,basementkey,setting;
 
-   // public Animator anim;
+    // public Animator anim;
 
-  
+
     //public Rigidbody rb;
 
-   // public Rotate R;
-   // public Pickup Object;
+    // public Rotate R;
+    // public Pickup Object;
     // Start is called before the first frame update
-    
-    
+
+    public Slider slider;
     void Start()
     {
         
@@ -39,21 +40,26 @@ public class CameraRotation : MonoBehaviour
 
     public void RangeUpdate(float sen)
     {
-        sensor = sen;   
+          
+        sensor=slider.value ;
+
+       
+;   
         Debug.Log(sensor);
     }
     void Escape()
     {
-        if(Input.GetKeyUp(KeyCode.Escape) && !setting)
+        if(Input.GetKeyUp(KeyCode.Escape) )
         {
             Cursor.lockState = CursorLockMode.None;
             Setting.SetActive(true);
+            Time.timeScale = 0; 
             StartCoroutine(Set());
         }
 
-        if (Input.GetKeyUp(KeyCode.Escape) && setting)
+        if (Input.GetKeyUp(KeyCode.Escape))
         {
-            //Cursor.lockState = CursorLockMode.None;
+                //Cursor.lockState = CursorLockMode.None;
             Setting.SetActive(false);
             StartCoroutine(SetDone());
             Cursor.lockState = CursorLockMode.Locked;
@@ -61,6 +67,11 @@ public class CameraRotation : MonoBehaviour
     }
     void Back()
     {
+                        Time.timeScale = 1;
+        //Cursor.lockState = CursorLockMode.None;
+        Setting.SetActive(false);
+        StartCoroutine(SetDone());
+        Cursor.lockState = CursorLockMode.Locked;
 
     }
     IEnumerator Set()
