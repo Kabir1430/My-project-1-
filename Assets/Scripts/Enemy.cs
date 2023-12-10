@@ -95,7 +95,8 @@ public class Enemy : MonoBehaviour
                 if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 2.5f)
                     //  Wait if the current position is not the player position
                     Stop();
-                m_WaitTime -= Time.deltaTime;
+                m_playerInRange = false;
+                m_WaitTime =0;
 
                 m_IsPatrol = true;
             }
