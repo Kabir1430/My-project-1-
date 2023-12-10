@@ -13,9 +13,11 @@ public class CameraRotation : MonoBehaviour
 
     public LayerMask layer;
 
-    public bool papering,lighting;
+    public bool papering,lighting,opening;
 
+    public Animator anim;
 
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -63,10 +65,10 @@ public class CameraRotation : MonoBehaviour
         if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
         {
 
-            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("paper") && !papering)
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("paper")  && !papering)
             {
                 Paper.SetActive(true);
-                //   Debug.Log(hit.transform.name);
+             //   Debug.Log(hit.transform.name);
                 StartCoroutine(True());
             }
             if (papering)
@@ -77,60 +79,73 @@ public class CameraRotation : MonoBehaviour
                 Paper.SetActive(false);
             }
 
-            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("pickable") && opening)
+            if(hit.collider.gameObject.layer==LayerMask.NameToLayer("Drawer") && !opening)
             {
 
+                anim.SetBool("On", true);
+                StartCoroutine(Open());
+                Debug.Log("Open");
+
+           
+
             }
-            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("pickable") && !opening)
+
+
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Drawer") && opening)
             {
+                anim.SetBool("On", false);
+                StartCoroutine(Close());
 
 
             }
-        }
 
-        IEnumerator True()
-        {
 
-            yield return new WaitForSeconds(0.2f);
-
-            papering = true;
-        }
-
-        IEnumerator False()
-        {
-
-            yield return new WaitForSeconds(0.2f);
-            papering = false;
-        }
-
-        IEnumerator On()
-        {
-
-            yield return new WaitForSeconds(0.2f);
-
-            lighting = true;
-        }
-
-        IEnumerator OFF()
-        {
-
-            yield return new WaitForSeconds(0.2f);
-            lighting = false;
-        }
-
-        IEnumerator Open()
-        {
-
-            yield return new WaitForSeconds(0.2f);
-
-            lighting = true;
-        }
-
-        IEnumerator Close()
-        {
-
-            yield return new WaitForSeconds(0.2f);
-            lighting = false;
         }
     }
+
+    IEnumerator True()
+    {
+
+        yield return new WaitForSeconds(0.2f);
+
+        papering = true;
+    }
+
+    IEnumerator False()
+    {
+
+        yield return new WaitForSeconds(0.2f);
+    papering=false; 
+    }
+
+    IEnumerator On()
+    {
+
+        yield return new WaitForSeconds(0.2f);
+
+        lighting= true;
+    }
+
+    IEnumerator OFF()
+    {
+
+        yield return new WaitForSeconds(0.2f);
+    lighting= false;
+    }
+
+    IEnumerator Open()
+    {
+
+        yield return new WaitForSeconds(0.2f);
+        opening = false;
+    }
+
+    IEnumerator Close()
+    {
+
+        yield return new WaitForSeconds(0.2f);
+        opening = false;
+    }
+
+
 }
