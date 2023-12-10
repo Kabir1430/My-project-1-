@@ -27,12 +27,13 @@ public class Enemy : MonoBehaviour
     Vector3 playerLastPosition = Vector3.zero;      //  Last position of the player when was near the enemy
     Vector3 m_PlayerPosition;                       //  Last position of the player when the player is seen by the enemy
 
-    float m_WaitTime;                               //  Variable of the wait time that makes the delay
-    float m_TimeToRotate;                           //  Variable of the wait time to rotate when the player is near that makes the delay
-    bool m_playerInRange;                           //  If the player is in range of vision, state of chasing
-    bool m_PlayerNear;                              //  If the player is near, state of hearing
-    bool m_IsPatrol;                                //  If the enemy is patrol, state of patroling
-    bool m_CaughtPlayer;                            //  if the enemy has caught the player
+   public float m_WaitTime;                               //  Variable of the wait time that makes the delay
+    public float m_TimeToRotate;                           //  Variable of the wait time to rotate when the player is near that makes the delay
+    public bool m_playerInRange;                           //  If the player is in range of vision, state of chasing
+    public bool m_PlayerNear;                              //  If the player is near, state of hearing
+    public bool m_IsPatrol;                                //  If the enemy is patrol, state of patroling
+
+    public bool m_CaughtPlayer;                            //  if the enemy has caught the player
 
     void Start()
     {
@@ -82,8 +83,8 @@ public class Enemy : MonoBehaviour
             if (m_WaitTime <= 0 && !m_CaughtPlayer && Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 6f)
             {
                 //  Check if the enemy is not near to the player, returns to patrol after the wait time delay
-                m_IsPatrol = true;
                 m_PlayerNear = false;
+                m_IsPatrol = true;
                 Move(speedWalk);
                 m_TimeToRotate = timeToRotate;
                 m_WaitTime = startWaitTime;
@@ -94,7 +95,10 @@ public class Enemy : MonoBehaviour
                 if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 2.5f)
                     //  Wait if the current position is not the player position
                     Stop();
-                m_WaitTime -= Time.deltaTime;
+                m_playerInRange = false;
+                m_WaitTime =0;
+
+                m_IsPatrol = true;
             }
         }
     }
@@ -230,5 +234,3 @@ public class Enemy : MonoBehaviour
         }
     }
 }
- 
-
