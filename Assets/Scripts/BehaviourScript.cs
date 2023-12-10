@@ -49,12 +49,12 @@ public class BehaviourScript : MonoBehaviour
 
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-        if (Physics.Raycast())
+       // if (Physics.Raycast());
     }
 
     private void ChasePlayer()
     {
-        agent.SetDestination
+       // agent.SetDestination
     }
 
     // Start is called before the first frame update
