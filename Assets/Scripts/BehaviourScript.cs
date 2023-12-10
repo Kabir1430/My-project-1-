@@ -58,6 +58,8 @@ public class BehaviourScript : MonoBehaviour
     public float sightRange;
     public bool playerInSightRange;
 
+    public Player P;
+
     private void Awake()
     {
         
@@ -91,7 +93,14 @@ public class BehaviourScript : MonoBehaviour
        // agent.SetDestination
        m_PlayerNear = false;                       //  Set false that hte player is near beacause the enemy already sees the player
         playerLastPosition = Vector3.zero;          //  Reset the player near position
-
+        
+        if (!m_CaughtPlayer && P.iscrouch==false )
+        {
+            Move(speedRun);
+            navMeshAgent.SetDestination(m_PlayerPosition);
+            Debug.Log("Chasing");
+            //  set the destination of the enemy to the player location
+        }
         if (!m_CaughtPlayer)
         {
             Move(speedRun);
