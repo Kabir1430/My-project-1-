@@ -212,57 +212,6 @@ public class BehaviourScript : MonoBehaviour
         }
     }
 
-    private void Patroling()
-    {
-        if (!walkPointSet) SearchWalkPoint();
-
-        if (walkPointSet)
-            agent.SetDestination(walkPoint);
-
-        Vector3 distanceToWalkPoint = transform.position - walkPoint;
-
-        //Walkpoint reached
-        if (distanceToWalkPoint.magnitude < 1f)
-            walkPointSet = false;
-
-        if (m_PlayerNear)
-        {
-            //  Check if the enemy detect near the player, so the enemy will move to that position
-            if (m_TimeToRotate <= 0)
-            {
-                Move(speedWalk);
-                LookingPlayer(playerLastPosition);
-            }
-            else
-            {
-                //  The enemy wait for a moment and then go to the last player position
-                Stop();
-                m_TimeToRotate -= Time.deltaTime;
-            }
-        }
-        else
-        {
-            m_PlayerNear = false;           //  The player is no near when the enemy is platroling
-            playerLastPosition = Vector3.zero;
-            navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);    //  Set the enemy destination to the next waypoint
-            if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
-            {
-                //  If the enemy arrives to the waypoint position then wait for a moment and go to the next
-                if (m_WaitTime <= 0)
-                {
-                    NextPoint();
-                    Move(speedWalk);
-                    m_WaitTime = startWaitTime;
-                }
-                else
-                {
-                    Stop();
-                    m_WaitTime -= Time.deltaTime;
-                }
-            }
-        }
-    }
-
     private void OnAnimatorMove()
     {
 
