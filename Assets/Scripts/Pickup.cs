@@ -7,7 +7,7 @@ public class Pickup : MonoBehaviour
 {
     private Rigidbody rb; // Reference to the Rigidbody of the object
     private bool isBeingCarried = false; // Flag to check if the object is being carried
-
+    public Transform parent;
     void Start()
     {
         rb = GetComponent<Rigidbody>(); // Get the Rigidbody component
@@ -16,15 +16,22 @@ public class Pickup : MonoBehaviour
    public void PickUp()
     {
         rb.isKinematic = true; // Disable Rigidbody physics when picked up
-        transform.SetParent(Camera.main.transform); // Set the object's parent to the camera
+        transform.SetParent(parent); // Set the object's parent to the camera
         isBeingCarried = true; // Set the carrying flag to true
+
+       
+
+
     }
 
 
-   public void Carry()
+    public void Carry()
     {
         // Update the object's position to follow the camera (or player)
-        transform.position = Camera.main.transform.position + Camera.main.transform.forward * 2.0f;
+                
+        transform.position = parent.transform.position ;
+    
+        transform.Rotate(0,0,100);
     }
 
    public void Drop()
