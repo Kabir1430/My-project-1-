@@ -23341,23 +23341,23 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Darling, if you read this, please help us!
 
-    
 
-    Monsters kidnapped
-    us and locked us in different rooms. If you find the 3 keys that the monsters
-    have hidden, we might have a chance to escape! You need a key for me, one for
-    our little Timo and one for the house basement door, which the monsters have
-    locked.
 
-    But be careful, the monsters will try to stop you! They could hide
-    anywhere, so don''t trust what you see!
+    Monsters kidnapped us
+    and locked us in different rooms. If you find the 3 keys that the monsters have
+    hidden, we might have a chance to escape! You need a key for me, one for our
+    little Timo and one for the house basement door, which the monsters have locked.
 
-    
+    But
+    be careful, the monsters will try to stop you! They could hide anywhere, so don''t
+    trust what you see!
 
-    You are our last hope, we
-    believe in you!
 
-    I love you,
+
+    You are our last hope, we believe in you!
+
+    I love
+    you,
 
     Your Olivia'
   m_isRightToLeft: 0
@@ -36506,6 +36506,84 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1052834451}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1053458938
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3226926850084178756, guid: 2ee0b4a38c5f6f247b98ef022d5ff2fb,
+        type: 3}
+      propertyPath: m_Name
+      value: Ghost_Racket_lightgreen 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7471979145691814513, guid: 2ee0b4a38c5f6f247b98ef022d5ff2fb,
+        type: 3}
+      propertyPath: P
+      value: 
+      objectReference: {fileID: 8069937215145730672}
+    - target: {fileID: 7471979145691814513, guid: 2ee0b4a38c5f6f247b98ef022d5ff2fb,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 950077113568684265}
+    - target: {fileID: 8063795472426541025, guid: 2ee0b4a38c5f6f247b98ef022d5ff2fb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.656
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063795472426541025, guid: 2ee0b4a38c5f6f247b98ef022d5ff2fb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.988
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063795472426541025, guid: 2ee0b4a38c5f6f247b98ef022d5ff2fb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -18.063
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063795472426541025, guid: 2ee0b4a38c5f6f247b98ef022d5ff2fb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.29547688
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063795472426541025, guid: 2ee0b4a38c5f6f247b98ef022d5ff2fb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063795472426541025, guid: 2ee0b4a38c5f6f247b98ef022d5ff2fb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9553499
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063795472426541025, guid: 2ee0b4a38c5f6f247b98ef022d5ff2fb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063795472426541025, guid: 2ee0b4a38c5f6f247b98ef022d5ff2fb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063795472426541025, guid: 2ee0b4a38c5f6f247b98ef022d5ff2fb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 145.628
+      objectReference: {fileID: 0}
+    - target: {fileID: 8063795472426541025, guid: 2ee0b4a38c5f6f247b98ef022d5ff2fb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2ee0b4a38c5f6f247b98ef022d5ff2fb, type: 3}
 --- !u!1001 &1054346145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76247,7 +76325,11 @@ MonoBehaviour:
   papering: 0
   lighting: 0
   opening: 0
+  isBeingCarried: 0
+  pickup: 0
   anim: {fileID: 96621817}
+  rb: {fileID: 0}
+  Object: {fileID: 0}
 --- !u!4 &1406765437185081959
 Transform:
   m_ObjectHideFlags: 0
@@ -79429,3 +79511,4 @@ SceneRoots:
   - {fileID: 1701606708}
   - {fileID: 1262407463}
   - {fileID: 1537460716}
+  - {fileID: 1053458938}
