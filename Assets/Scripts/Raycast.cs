@@ -19,7 +19,13 @@ public class Raycast : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit ,range))
         {
+            
+            if(hit.collider.tag=="")
+            {
+
             Debug.Log(hit.transform.name);
+
+            }
         }
     }
 }
