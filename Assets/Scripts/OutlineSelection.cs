@@ -42,7 +42,7 @@ public class OutlineSelection : MonoBehaviour
         }
 
         // Selection
-        if (Input.GetMouseButtonDown(0))
+      /*  if (Input.GetMouseButtonDown(0))
         {
             if (highlight)
             {
@@ -62,7 +62,7 @@ public class OutlineSelection : MonoBehaviour
                     selection = null;
                 }
             }
-        }
+        }*/
     }
 
 }

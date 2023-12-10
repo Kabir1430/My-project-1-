@@ -27,10 +27,13 @@ public class Player : MonoBehaviour
 
     public GameObject CardBoard,PlayerObj;
 
+    public Enemy enemy;
     IEnumerator Crouching()
     {
         yield return new WaitForSeconds(wait);
         iscrouch = true;
+
+
     }
     IEnumerator Crouch()
     {
@@ -40,7 +43,14 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
+        if (iscrouch)
+        {
 
+        enemy.m_playerInRange = false;
+
+        enemy.m_IsPatrol = true;
+
+        }
 
      Ground = Physics.CheckSphere(sphere.position, Radius,layer);
         if(Ground&&Velocity.y<0)
