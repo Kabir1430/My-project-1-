@@ -44,6 +44,15 @@ public class Player : MonoBehaviour
 
         iscrouch = false;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag=="Enemy")
+        {
+
+
+        }
+    }
     void Update()
     {
 

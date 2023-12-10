@@ -1,24 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class CameraRotation : MonoBehaviour
 {
 
-    public Transform player;
+
+    public Transform player,door;
+    public float rotationSpeed = 2.0f; // Speed of 
     public Camera fpscam;
     public float range = 100f;
-    public GameObject Paper,Flash;
+    public int i;
+
+    public GameObject Paper,Flash,Girl,Child,GameClear,Safed,CSafed,O;
     public float rot, sensor;
 
     public LayerMask layer;
 
-    public bool papering,lighting,opening, isBeingCarried,pickup;
+    public bool papering,lighting,opening, isBeingCarried,pickup,girlkey,chilkey,basementkey;
 
-    public Animator anim;
+   // public Animator anim;
 
-   public Rigidbody rb;
-    public Pickup Object;
+  
+    //public Rigidbody rb;
+
+   // public Rotate R;
+   // public Pickup Object;
     // Start is called before the first frame update
     void Start()
     {
@@ -67,10 +75,10 @@ public class CameraRotation : MonoBehaviour
         if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
         {
 
-            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("paper")  && !papering)
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("paper") && !papering)
             {
                 Paper.SetActive(true);
-             //   Debug.Log(hit.transform.name);
+                //   Debug.Log(hit.transform.name);
                 StartCoroutine(True());
             }
             if (papering)
@@ -81,63 +89,41 @@ public class CameraRotation : MonoBehaviour
                 Paper.SetActive(false);
             }
 
-            if(hit.collider.gameObject.layer==LayerMask.NameToLayer("Drawer") && !opening)
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("girldoor"))
             {
+                Girl.SetActive(false);
+                i++;
+                Safed.SetActive(true);
+                StartCoroutine(Ok());
+            }
 
-                anim.SetBool("On", true);
-                StartCoroutine(Open());
-                Debug.Log("Open");
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("child"))
+            {
+                i++;
+                Child.SetActive(false);
 
-           
-
+                CSafed.SetActive(true);
+                StartCoroutine(Ok());
             }
 
 
-            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Drawer") && opening)
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Drawer") && i == 2)
             {
-                anim.SetBool("On", false);
-                StartCoroutine(Close());
-
-
-            }
-
-            if(hit.collider.gameObject.layer== LayerMask.NameToLayer("Pickup") &&  !pickup)
-            {
-
-                Object.PickUp();
-                StartCoroutine(Open());
+                GameClear.SetActive(true);
             }
 
 
-            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Pickup") &&  pickup)
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Drawer") && i <2)
             {
-
-                Object.Drop();
-                StartCoroutine(Open());
-
+                O.SetActive(true);
+                StartCoroutine(Ok());
             }
+
+
         }
     }
 
-    void PickUp()
-    {
-        rb.isKinematic = true; // Disable Rigidbody physics when picked up
-        transform.SetParent(Camera.main.transform); // Set the object's parent to the camera
-        isBeingCarried = true; // Set the carrying flag to true
-    }
-
-    void Carry()
-    {
-        // Update the object's position to follow the camera (or player)
-        transform.position = Camera.main.transform.position + Camera.main.transform.forward * 2.0f;
-    }
-
-    void Drop()
-    {
-        rb.isKinematic = false; // Enable Rigidbody physics when dropped
-        transform.SetParent(null); // Reset the object's parent
-        isBeingCarried = false; // Set the carrying flag to false
-    }
+    
 
     IEnumerator True()
     {
@@ -169,19 +155,12 @@ public class CameraRotation : MonoBehaviour
     lighting= false;
     }
 
-    IEnumerator Open()
+   IEnumerator Ok()
     {
-        yield return new WaitForSeconds(0.2f);
-        pickup = true;
-        Object.Carry();
+        yield return new WaitForSeconds(1f);
+        CSafed.SetActive(false);
+        Safed.SetActive(false);
+    O.SetActive(false);
     }
-
-    IEnumerator Close()
-    {
-
-        yield return new WaitForSeconds(0.2f);
-        pickup = false;
-    }
-
 
 }

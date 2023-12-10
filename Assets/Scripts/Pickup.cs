@@ -31,9 +31,13 @@ public class Pickup : MonoBehaviour
                 
         transform.position = parent.transform.position ;
     
-        transform.Rotate(0,0,100);
+        transform.Rotate(0,0,100f);
     }
+    public void rotate()
+    {
+        transform.Rotate(0, 0, 0);
 
+    }
    public void Drop()
     {
         rb.isKinematic = false; // Enable Rigidbody physics when dropped

@@ -6,18 +6,17 @@ using UnityEngine;
 public class GameOver : MonoBehaviour
 {
 
-    public GameObject player;
-    public GameObject enemy;
 
+    public GameObject panel;
     public void OnCollisionEnter(Collision collision)
     {
+            Debug.Log("GameOver");
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("GameOver");
-
+            panel.SetActive(true);
         }
     }
-
+  
     // Start is called before the first frame update
     void Start()
     {
