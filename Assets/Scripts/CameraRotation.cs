@@ -60,6 +60,13 @@ public class CameraRotation : MonoBehaviour
 
                 Paper.SetActive(false);
             }
+
+            if(hit.collider.gameObject.layer==LayerMask.NameToLayer("pickable")&& drae)
+            {
+
+            }
+                    
+                    
         }
     }
 
