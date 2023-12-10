@@ -13,11 +13,12 @@ public class CameraRotation : MonoBehaviour
 
     public LayerMask layer;
 
-    public bool papering,lighting,opening;
+    public bool papering,lighting,opening, isBeingCarried,pickup;
 
     public Animator anim;
 
-   
+   public Rigidbody rb;
+    public Pickup Object;
     // Start is called before the first frame update
     void Start()
     {
@@ -99,8 +100,42 @@ public class CameraRotation : MonoBehaviour
 
             }
 
+            if(hit.collider.gameObject.layer== LayerMask.NameToLayer("Pickup") &&  pickup)
+            {
 
+                Object.PickUp();
+                StartCoroutine(Open());
+            }
+
+
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Pickup") &&  pickup)
+            {
+
+                Object.Drop();
+                StartCoroutine(Open());
+
+            }
         }
+    }
+
+    void PickUp()
+    {
+        rb.isKinematic = true; // Disable Rigidbody physics when picked up
+        transform.SetParent(Camera.main.transform); // Set the object's parent to the camera
+        isBeingCarried = true; // Set the carrying flag to true
+    }
+
+    void Carry()
+    {
+        // Update the object's position to follow the camera (or player)
+        transform.position = Camera.main.transform.position + Camera.main.transform.forward * 2.0f;
+    }
+
+    void Drop()
+    {
+        rb.isKinematic = false; // Enable Rigidbody physics when dropped
+        transform.SetParent(null); // Reset the object's parent
+        isBeingCarried = false; // Set the carrying flag to false
     }
 
     IEnumerator True()
@@ -137,14 +172,14 @@ public class CameraRotation : MonoBehaviour
     {
 
         yield return new WaitForSeconds(0.2f);
-        opening = false;
+        pickup = false;
     }
 
     IEnumerator Close()
     {
 
         yield return new WaitForSeconds(0.2f);
-        opening = false;
+        pickup = false;
     }
 
 
