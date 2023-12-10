@@ -7,6 +7,7 @@ public class BehaviourScript : MonoBehaviour
 {
     
     [SerializeField] public AudioSource GhostSound;
+    [SerializeField] public AudioSource GhostVoices;
     
     public NavMeshAgent agent;
 
@@ -312,10 +313,12 @@ public class BehaviourScript : MonoBehaviour
             if (m_playerInRange && !GhostSound.isPlaying) 
             {
                 GhostSound.Play();
+                GhostVoices.Play();
             }
             if (!m_playerInRange && GhostSound.isPlaying)
             {
                 GhostSound.Stop();
+                GhostVoices.Stop();
             }
         }
     }
