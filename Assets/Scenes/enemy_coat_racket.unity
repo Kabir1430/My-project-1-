@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -259,7 +259,7 @@ PrefabInstance:
     - target: {fileID: 950077112340436450, guid: cefe8f25e940d3343b2d2f58ac7173df,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.067956
+      value: 4.1864824
       objectReference: {fileID: 0}
     - target: {fileID: 950077112340436450, guid: cefe8f25e940d3343b2d2f58ac7173df,
         type: 3}
@@ -269,12 +269,12 @@ PrefabInstance:
     - target: {fileID: 950077112340436450, guid: cefe8f25e940d3343b2d2f58ac7173df,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -25.696358
+      value: -25.6954
       objectReference: {fileID: 0}
     - target: {fileID: 950077112340436450, guid: cefe8f25e940d3343b2d2f58ac7173df,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9982246
+      value: 0.9977125
       objectReference: {fileID: 0}
     - target: {fileID: 950077112340436450, guid: cefe8f25e940d3343b2d2f58ac7173df,
         type: 3}
@@ -284,7 +284,7 @@ PrefabInstance:
     - target: {fileID: 950077112340436450, guid: cefe8f25e940d3343b2d2f58ac7173df,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.05956196
+      value: -0.06759987
       objectReference: {fileID: 0}
     - target: {fileID: 950077112340436450, guid: cefe8f25e940d3343b2d2f58ac7173df,
         type: 3}
@@ -299,7 +299,7 @@ PrefabInstance:
     - target: {fileID: 950077112340436450, guid: cefe8f25e940d3343b2d2f58ac7173df,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 6.829
+      value: -7.752
       objectReference: {fileID: 0}
     - target: {fileID: 950077112340436450, guid: cefe8f25e940d3343b2d2f58ac7173df,
         type: 3}
@@ -956,7 +956,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9f618680dc0f7bd44a86a655cede35b6, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

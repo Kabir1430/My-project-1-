@@ -283,7 +283,7 @@ public class BehaviourScript : MonoBehaviour
                 if (!Physics.Raycast(transform.position, dirToPlayer, dstToPlayer, obstacleMask))
                 {
                     m_playerInRange = true;             //  The player has been seeing by the enemy and then the nemy starts to chasing the player
-                    GhostSound.Play();
+                    
                     m_IsPatrol = false;                 //  Change the state to chasing the player
                 }
                 else
@@ -308,6 +308,14 @@ public class BehaviourScript : MonoBehaviour
                  *  If the enemy no longer sees the player, then the enemy will go to the last position that has been registered
                  * */
                 m_PlayerPosition = player.transform.position;       //  Save the player's current position if the player is in range of vision
+            }
+            if (m_playerInRange && !GhostSound.isPlaying) 
+            {
+                GhostSound.Play();
+            }
+            if (!m_playerInRange && GhostSound.isPlaying)
+            {
+                GhostSound.Stop();
             }
         }
     }
