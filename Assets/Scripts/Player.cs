@@ -27,10 +27,16 @@ public class Player : MonoBehaviour
 
     public GameObject CardBoard,PlayerObj;
 
+    public Enemy enemy;
     IEnumerator Crouching()
     {
         yield return new WaitForSeconds(wait);
         iscrouch = true;
+
+       // enemy.m_playerInRange = false;
+
+     //   enemy.m_IsPatrol = true;
+
     }
     IEnumerator Crouch()
     {
