@@ -13,12 +13,12 @@ public class CameraRotation : MonoBehaviour
     public float range = 100f;
     public int i;
 
-    public GameObject Paper,Flash,Girl,Child,GameClear,Safed,CSafed,O;
+    public GameObject Paper,Flash,Girl,Child,GameClear,Safed,CSafed,O,Setting;
     public float rot, sensor;
 
     public LayerMask layer;
 
-    public bool papering,lighting,opening, isBeingCarried,pickup,girlkey,chilkey,basementkey;
+    public bool papering,lighting,opening, isBeingCarried,pickup,girlkey,chilkey,basementkey,setting;
 
    // public Animator anim;
 
@@ -28,14 +28,58 @@ public class CameraRotation : MonoBehaviour
    // public Rotate R;
    // public Pickup Object;
     // Start is called before the first frame update
+    
+    
     void Start()
     {
+        
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+
+    public void RangeUpdate(float sen)
+    {
+        sensor = sen;   
+        Debug.Log(sensor);
+    }
+    void Escape()
+    {
+        if(Input.GetKeyUp(KeyCode.Escape) && !setting)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Setting.SetActive(true);
+            StartCoroutine(Set());
+        }
+
+        if (Input.GetKeyUp(KeyCode.Escape) && setting)
+        {
+            //Cursor.lockState = CursorLockMode.None;
+            Setting.SetActive(false);
+            StartCoroutine(SetDone());
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
+    void Back()
+    {
+
+    }
+    IEnumerator Set()
+    {
+
+        yield return new WaitForSeconds(1f);
+        setting = true;
+    }
+    IEnumerator SetDone()
+    {
+
+        yield return new WaitForSeconds(1f);
+        setting = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Escape();
         float x = Input.GetAxis("Mouse X") * sensor * Time.deltaTime;
 
 
