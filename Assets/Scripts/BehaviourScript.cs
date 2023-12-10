@@ -16,7 +16,7 @@ public class BehaviourScript : MonoBehaviour
 
     // Patroling
     public Vector3 walkPoint;
-    bool walkPointSet;
+    //bool walkPointSet;
     public float walkPointRange;
 
     // Added from Enemy
@@ -84,8 +84,8 @@ public class BehaviourScript : MonoBehaviour
 
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
-            walkPointSet = true;
+        //if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
+            //walkPointSet = true;
     }
 
     private void ChasePlayer()
@@ -138,12 +138,13 @@ public class BehaviourScript : MonoBehaviour
         m_PlayerNear = false;
         m_WaitTime = startWaitTime;                 //  Set the wait time variable that will change
         m_TimeToRotate = timeToRotate;
+        ;
 
         m_CurrentWaypointIndex = 0;                 //  Set the initial waypoint
 
-        navMeshAgent.isStopped = false;
-        navMeshAgent.speed = speedWalk;             //  Set the navemesh speed with the normal speed of the enemy
-        navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);    //  Set the destination to the first waypoint
+        //navMeshAgent.isStopped = false;
+        //navMeshAgent.speed = speedWalk;             //  Set the navemesh speed with the normal speed of the enemy
+        //navMeshAgent.SetDestination(waypoints[m_CurrentWaypointIndex].position);    //  Set the destination to the first waypoint
         Stop();
     }
 
