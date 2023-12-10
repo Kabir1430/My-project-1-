@@ -178,10 +178,12 @@ public class BehaviourScript : MonoBehaviour
         m_PlayerNear = false;                       //  Set false that the player is near because the enemy already sees the player
         playerLastPosition = Vector3.zero;          //  Reset the player near position
 
-        if (!m_CaughtPlayer)
+        if (!m_CaughtPlayer && P.iscrouch==false )
         {
             Move(speedRun);
-            navMeshAgent.SetDestination(m_PlayerPosition);          //  set the destination of the enemy to the player location
+            navMeshAgent.SetDestination(m_PlayerPosition);
+            Debug.Log("Chasing");
+            //  set the destination of the enemy to the player location
         }
         if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)    //  Control if the enemy arrive to the player location
         {
