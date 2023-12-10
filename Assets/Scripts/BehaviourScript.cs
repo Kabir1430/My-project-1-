@@ -16,7 +16,7 @@ public class BehaviourScript : MonoBehaviour
 
     // Patroling
     public Vector3 walkPoint;
-    bool walkPointSet;
+    //bool walkPointSet;
     public float walkPointRange;
 
     // Added from Enemy
