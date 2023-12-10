@@ -53,19 +53,15 @@ public class CameraRotation : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
             Setting.SetActive(true);
-            Time.timeScale = 0; 
             StartCoroutine(Set());
+            Time.timeScale = 0; 
         }
 
-        if (Input.GetKeyUp(KeyCode.Escape))
-        {
-                //Cursor.lockState = CursorLockMode.None;
-            Setting.SetActive(false);
-            StartCoroutine(SetDone());
-            Cursor.lockState = CursorLockMode.Locked;
-        }
+        
+        
     }
-    void Back()
+    
+    public void Back()
     {
                         Time.timeScale = 1;
         //Cursor.lockState = CursorLockMode.None;
