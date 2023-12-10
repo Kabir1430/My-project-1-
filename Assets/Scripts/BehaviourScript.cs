@@ -5,6 +5,9 @@ using UnityEngine.AI;
 
 public class BehaviourScript : MonoBehaviour
 {
+    
+    [SerializeField] public AudioSource GhostSound;
+    
     public NavMeshAgent agent;
 
     public Transform player;
