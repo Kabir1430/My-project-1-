@@ -35,6 +35,7 @@ public class Enemy : MonoBehaviour
 
     public bool m_CaughtPlayer;                            //  if the enemy has caught the player
 
+    public Player player;
     void Start()
     {
         m_PlayerPosition = Vector3.zero;
@@ -73,7 +74,7 @@ public class Enemy : MonoBehaviour
         m_PlayerNear = false;                       //  Set false that hte player is near beacause the enemy already sees the player
         playerLastPosition = Vector3.zero;          //  Reset the player near position
 
-        if (!m_CaughtPlayer)
+        if (!m_CaughtPlayer && player.iscrouch==false )
         {
             Move(speedRun);
             navMeshAgent.SetDestination(m_PlayerPosition);

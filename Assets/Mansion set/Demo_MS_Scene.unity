@@ -16475,12 +16475,12 @@ PrefabInstance:
     - target: {fileID: 240061641535436560, guid: 37a4b924d4e17ab41b78029f5f00380c,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1563832084345478527, guid: 37a4b924d4e17ab41b78029f5f00380c,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2270267979399049512, guid: 37a4b924d4e17ab41b78029f5f00380c,
         type: 3}
@@ -16505,7 +16505,7 @@ PrefabInstance:
     - target: {fileID: 4873683449488683859, guid: 37a4b924d4e17ab41b78029f5f00380c,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5152324697331159437, guid: 37a4b924d4e17ab41b78029f5f00380c,
         type: 3}
