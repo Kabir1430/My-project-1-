@@ -1097,6 +1097,21 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 975633833}
+    - target: {fileID: 7961127453929642464, guid: 2ee0b4a38c5f6f247b98ef022d5ff2fb,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7961127453929642464, guid: 2ee0b4a38c5f6f247b98ef022d5ff2fb,
+        type: 3}
+      propertyPath: m_ImplicitCom
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7961127453929642464, guid: 2ee0b4a38c5f6f247b98ef022d5ff2fb,
+        type: 3}
+      propertyPath: m_ImplicitTensor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8063795472426541025, guid: 2ee0b4a38c5f6f247b98ef022d5ff2fb,
         type: 3}
       propertyPath: m_LocalPosition.x
