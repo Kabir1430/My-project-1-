@@ -22279,14 +22279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cd41eeb3fcf80f46b3aff72a631ca8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axes: 0
-  sensitivityX: 5
-  sensitivityY: 5
-  minimumX: -360
-  maximumX: 360
-  minimumY: -80
-  maximumY: 80
-  frameCounter: 20
 --- !u!114 &735819683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22299,8 +22291,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c13aa492b81fd468f01796077e1962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  gravity: 0
 --- !u!1001 &736639593
 PrefabInstance:
   m_ObjectHideFlags: 0
