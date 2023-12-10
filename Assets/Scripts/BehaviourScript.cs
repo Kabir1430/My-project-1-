@@ -283,6 +283,7 @@ public class BehaviourScript : MonoBehaviour
                 if (!Physics.Raycast(transform.position, dirToPlayer, dstToPlayer, obstacleMask))
                 {
                     m_playerInRange = true;             //  The player has been seeing by the enemy and then the nemy starts to chasing the player
+                    GhostSound.Play();
                     m_IsPatrol = false;                 //  Change the state to chasing the player
                 }
                 else
