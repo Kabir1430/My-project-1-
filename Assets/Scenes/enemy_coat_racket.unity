@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: d70c70142ae079243ad824d6a5462b6c, type: 2}
+--- !u!20 &628283217 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7064279284461319646, guid: cefe8f25e940d3343b2d2f58ac7173df,
+    type: 3}
+  m_PrefabInstance: {fileID: 975633832}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &933751396
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,6 +315,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1393936279416335009, guid: cefe8f25e940d3343b2d2f58ac7173df,
+        type: 3}
+      propertyPath: fpscam
+      value: 
+      objectReference: {fileID: 628283217}
     - target: {fileID: 1616513316113672879, guid: cefe8f25e940d3343b2d2f58ac7173df,
         type: 3}
       propertyPath: m_Layer
@@ -685,6 +696,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 975633832}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &975633835 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8069937216099311483, guid: cefe8f25e940d3343b2d2f58ac7173df,
+    type: 3}
+  m_PrefabInstance: {fileID: 975633832}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9abcdb7cf4a03bd4eaf86c1266a6a02e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1126778079
 GameObject:
   m_ObjectHideFlags: 0
@@ -1266,6 +1289,7 @@ MonoBehaviour:
   ghost: {fileID: 1441125009}
   sightRange: 0
   playerInSightRange: 0
+  P: {fileID: 975633835}
 --- !u!23 &1070045066735038465
 MeshRenderer:
   m_ObjectHideFlags: 0
