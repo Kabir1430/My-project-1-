@@ -1241,7 +1241,7 @@ MonoBehaviour:
   walkPointRange: 0
   navMeshAgent: {fileID: 919132148340940436}
   startWaitTime: 4
-  timeToRotate: 0
+  timeToRotate: 2
   speedWalk: 6
   speedRun: 9
   viewRadius: 15
