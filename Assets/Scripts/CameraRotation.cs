@@ -8,12 +8,14 @@ public class CameraRotation : MonoBehaviour
     public Transform player;
     public Camera fpscam;
     public float range = 100f;
-    public GameObject Paper;
+    public GameObject Paper,Flash;
     public float rot, sensor;
 
     public LayerMask layer;
 
-    public bool papering;
+    public bool papering,lighting;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,20 @@ public class CameraRotation : MonoBehaviour
         transform.localRotation = Quaternion.Euler(rot, 0f, 0f);
 
         player.Rotate(player.up * x);
+
+        if(Input.GetKey(KeyCode.Mouse1) && !lighting)
+        {
+            Flash.SetActive(true);
+            StartCoroutine(On());
+        }
+
+        if (Input.GetKey(KeyCode.Mouse1) && lighting)
+        {
+            Flash.SetActive(false);
+          
+            StartCoroutine(OFF());
+
+        }
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -61,7 +77,7 @@ public class CameraRotation : MonoBehaviour
                 Paper.SetActive(false);
             }
 
-            if(hit.collider.gameObject.layer==LayerMask.NameToLayer("pickable")&& drae)
+            if(hit.collider.gameObject.layer==LayerMask.NameToLayer("pickable"))
             {
 
             }
@@ -83,6 +99,21 @@ public class CameraRotation : MonoBehaviour
 
         yield return new WaitForSeconds(0.2f);
     papering=false; 
+    }
+
+    IEnumerator On()
+    {
+
+        yield return new WaitForSeconds(0.2f);
+
+        lighting= true;
+    }
+
+    IEnumerator OFF()
+    {
+
+        yield return new WaitForSeconds(0.2f);
+    lighting= false;
     }
 
 }
