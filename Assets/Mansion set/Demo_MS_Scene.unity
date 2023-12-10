@@ -41183,6 +41183,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost_Racket_lightgreen 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7471979145691814513, guid: 2ee0b4a38c5f6f247b98ef022d5ff2fb,
+        type: 3}
+      propertyPath: P
+      value: 
+      objectReference: {fileID: 8069937215145730672}
+    - target: {fileID: 7471979145691814513, guid: 2ee0b4a38c5f6f247b98ef022d5ff2fb,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 950077113568684265}
     - target: {fileID: 8063795472426541025, guid: 2ee0b4a38c5f6f247b98ef022d5ff2fb,
         type: 3}
       propertyPath: m_LocalPosition.x
